@@ -7,10 +7,14 @@ import android.net.NetworkCapabilities
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.*
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
 import com.example.androidflow.Utlis.DataStoreRepository
 import com.example.androidflow.Utlis.NetworkResult
 import com.example.androidflow.models.FoodRecipe
 import com.example.androidflow.models.ResultListing
+import com.example.androidflow.pagining.MainPagingSource
 import com.example.androidflow.repository.RecipesRepository
 import com.example.androidflow.roomDB.dao.FoodRecipeDao
 import com.example.androidflow.roomDB.entity.FavoritesEntity
@@ -163,6 +167,15 @@ class RecipesViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             postRepository.local.deleteFavoriteRecipe(favoritesEntity)
         }
+    val getDataFromRoomWithOffset = Pager(
+        PagingConfig(
+            pageSize = 5,
+            enablePlaceholders = false,
+            initialLoadSize = 5
+        ),
+    ) {
+        MainPagingSource(foodRecipeDao)
+    }.flow.cachedIn(viewModelScope)
 
 
 }

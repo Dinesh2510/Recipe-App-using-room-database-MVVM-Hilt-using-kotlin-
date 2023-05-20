@@ -105,10 +105,33 @@ class FavoriteRecipesAdapter(
         myViewHolders.add(holder)
         rootView = holder.itemView.rootView
 
-        val currentRecipe = favoriteRecipes[position]
-        holder.bind(currentRecipe)
+        val result = favoriteRecipes[position]
+        holder.binding.favoriteHeartImageView.setOnClickListener {
+            val favoritesEntity = FavoritesEntity(
+                0,
+                result.aggregateLikes,
+                result.cheap,
+                result.dairyFree,
+                result.glutenFree,
+                result.recipeId,
+                result.image,
+                result.readyInMinutes,
+                result.sourceName,
+                result.sourceUrl,
+                result.summary,
+                result.title,
+                result.vegan,
+                result.vegetarian,
+                result.veryHealthy
+            )
+            mainViewModel.deleteFavoriteRecipe(favoritesEntity)
+            showSnackBar("Remove from Favorite")
+            holder.binding.favoriteHeartImageView.load(R.drawable.ic_favorite_border)
+        }
 
-        saveItemStateOnScroll(currentRecipe, holder)
+        holder.bind(result)
+
+        saveItemStateOnScroll(result, holder)
 
         /**
          * Single Click Listener
@@ -116,7 +139,7 @@ class FavoriteRecipesAdapter(
 
         holder.binding.favoriteRecipesRowLayout.setOnClickListener {
             if (multiSelection) {
-                applySelection(holder, currentRecipe)
+                applySelection(holder, result)
             } else {
                 Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show()
             }
@@ -129,10 +152,10 @@ class FavoriteRecipesAdapter(
             if (!multiSelection) {
                 multiSelection = true
                 requireActivity.startActionMode(this)
-                applySelection(holder, currentRecipe)
+                applySelection(holder, result)
                 true
             } else {
-                applySelection(holder, currentRecipe)
+                applySelection(holder, result)
                 true
             }
         }
