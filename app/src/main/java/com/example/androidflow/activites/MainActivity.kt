@@ -1,4 +1,4 @@
-package com.example.androidflow
+package com.example.androidflow.activites
 
 
 import android.content.DialogInterface
@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.androidflow.R
 import com.example.androidflow.adapter.RecipesAdapter
 import com.example.androidflow.databinding.ActivityMainBinding
 import com.example.androidflow.roomDB.database.FoodDatabase
@@ -38,9 +39,7 @@ open class MainActivity : AppCompatActivity() {
         setContentView(view)
         title = "Home Listing";
 
-        val jsonString = Gson().toJson(DataGenerator.getMachineLearning())
-        Log.e("TAG_Converting_Data", "onCreate: "+jsonString )
-        setUi()
+       setUi()
        /* postViewModel.getPost()
         postViewModel.response.observe(this, Observer { response ->
             postViewModel.deleteAllPostTable()

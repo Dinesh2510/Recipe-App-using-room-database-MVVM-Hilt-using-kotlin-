@@ -1,15 +1,14 @@
-package com.example.androidflow
+package com.example.androidflow.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.androidflow.databinding.ActivityHomePageBinding
 
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.androidflow.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

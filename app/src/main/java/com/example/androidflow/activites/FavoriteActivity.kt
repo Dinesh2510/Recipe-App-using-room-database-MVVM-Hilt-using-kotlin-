@@ -1,4 +1,4 @@
-package com.example.androidflow
+package com.example.androidflow.activites
 
 import android.os.Bundle
 import android.view.View
@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidflow.adapter.FavoriteRecipesAdapter
 import com.example.androidflow.databinding.ActivityFavoriteBinding
 import com.example.androidflow.roomDB.database.FoodDatabase
-import com.example.androidflow.roomDB.entity.FavoritesEntity
 import com.example.androidflow.viewmodel.FavViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
