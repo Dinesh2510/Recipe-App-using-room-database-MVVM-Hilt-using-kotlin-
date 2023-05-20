@@ -1,10 +1,16 @@
-# Hilt & Kotlin Demo
+# Recipe App using Navigation Components + MVVM + Dagger hilt + Retrofit + Coroutines + Flow + Paging3 + ROOM Database 
+
 
 
 ## About
-This is a demo app built using 'Hilt' a new dependency injection framework & Kotlin Flow for Android.
-- Clean and Simple Material UI.
+This is a demo app built using latest android architecture and features.
+- Clean and Simple Material3 UI.
 - It supports dark theme too 🌗.
+- Navigation Components - Bottom Navigation 
+- List of Recipe parse from API using retrofit 
+- Store Api data in local storage Room database (Offline) and show list from Room database
+- also Add/Remove recipe in favorite using room database
+- List of favorite recipe with delete all, single or multiple delete
 
 ## Built With 🛠
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
@@ -17,23 +23,5 @@ This is a demo app built using 'Hilt' a new dependency injection framework & Kot
   - [Room](https://developer.android.com/topic/libraries/architecture/room) - SQLite object mapping library.
 - [Gson](https://github.com/google/gson) - A JSON library for Kotlin and Java.
 - [Material Components for Android](https://github.com/material-components/material-components-android) - Modular and customizable Material Design UI components for Android.
-- []() -  A flow is conceptually a stream of data that can be computed asynchronously.
-
-
-## Project structure
-This is the project structure using [***HILT (Dependency injection)***](https://developer.android.com/training/dependency-injection/hilt-jetpack) &  [***Kotlin Flow***](https://developer.android.com/kotlin/flow) library.
-
-![](https://github.com/iambaljeet/JetPackHiltDemo/blob/master/art/folder_structure.PNG)
-
-## Architecture
-This app uses [***MVVM (Model View View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
-
-![](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
-
-
-This app uses [***Kotlin Flow***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
-
-![](https://developer.android.com/static/images/kotlin/flow/flow-entities.png)
-
-
+- [Kotlin FLow](https://developer.android.com/kotlin/flow) -  A flow is conceptually a stream of data that can be computed asynchronously.
 
