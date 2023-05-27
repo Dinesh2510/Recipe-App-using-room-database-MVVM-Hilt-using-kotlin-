@@ -3,6 +3,10 @@
 # Recipe App using Navigation Components + MVVM + Dagger hilt + Retrofit + Coroutines + Flow + Paging3 + ROOM Database 
 
 
+## ✨ Demo
+|  Main Screen 2 |
+|:-:|
+ | [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-jj_j2oNEGA/0.jpg)](https://www.youtube.com/watch?v=-jj_j2oNEGA) |
 
 ## About
 This is a demo app built using latest android architecture and features.
